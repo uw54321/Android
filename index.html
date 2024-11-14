@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Android App's Privacy Policy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fb;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: transparent;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            margin-top: 0;
+            overflow-x: hidden;
+            padding-bottom: 50vh;
+        }
+
+        .content {
+            background-color: white;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .sidebar {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .sidebar ul li {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            display: block;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            background-color: #4CAF50;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 150px;
+                bottom: 10px;
+                left: 10px;
+            }
+
+            .sidebar ul li a {
+                font-size: 0.9rem;
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Our Android App's Privacy Policy
+</header>
+
+<main>
+    <section id="introduction" class="content">
+        <h3>Introduction</h3>
+        <p>This web page is intended to indicate the privacy policy of an Android app "Ghost Leg Pro - Ladder Lottery". This app is on Google Play and can be accessed from the following link.</p>
+        <p><a href="https://play.google.com/store/apps/details?id=com.dev0808.ghostleg" target="_blank">Google Play Store - Ghost Leg Pro</a></p>
+        <p>The app does not collect or share any user data, including location, personal, financial, or contact information.</p>
+    </section>
+
+    <section id="info-collect" class="content">
+        <h3>Information Collection</h3>
+        <p>We do not collect personal data, including location, financial, or contact information.</p>
+    </section>
+
+    <section id="log-data" class="content">
+        <h3>Log Data</h3>
+        <p>In the case of an error in the app, we may collect data and information (through third-party products) on your phone called Log Data. This may include your device’s Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when using the service, the time and date of usage, and other statistics.</p>
+    </section>
+
+    <section id="cookies" class="content">
+        <h3>Cookies</h3>
+        <p>This Service does not explicitly use cookies. However, third-party code and libraries used in the app may use cookies to collect information and improve their services. You can choose to accept or refuse cookies, and you will be notified when a cookie is being sent to your device. If you choose to refuse cookies, some portions of the Service may not work properly.</p>
+    </section>
+
+    <section id="links" class="content">
+        <h3>Links to Other Sites</h3>
+        <p>This Service contains links to other websites. If you click on a third-party link, you will be directed to that site. Please note that these external sites are not operated by us, and we strongly recommend reviewing their privacy policies. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+    </section>
+
+    <section id="children" class="content">
+        <h3>Children’s Privacy</h3>
+        <p>These Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13 years of age.</p>
+    </section>
+</main>
+
+<div class="sidebar">
+    <ul>
+        <li><a href="#introduction" class="section-link">Introduction</a></li>
+        <li><a href="#info-collect" class="section-link">Information Collection</a></li>
+        <li><a href="#log-data" class="section-link">Log Data</a></li>
+        <li><a href="#cookies" class="section-link">Cookies</a></li>
+        <li><a href="#links" class="section-link">Links to Other Sites</a></li>
+        <li><a href="#children" class="section-link">Children’s Privacy</a></li>
+    </ul>
+</div>
+
+<script>
+    function highlightActiveSection() {
+        const sections = document.querySelectorAll('section');
+        const links = document.querySelectorAll('.sidebar ul li a');
+        
+        let currentSection = null;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight) {
+                currentSection = section.id;
+            }
+        });
+
+        links.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', highlightActiveSection);
+    highlightActiveSection();
+</script>
+
+</body>
+</html>
